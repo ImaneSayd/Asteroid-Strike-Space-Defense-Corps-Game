@@ -8,11 +8,14 @@
 • Rim Jemmari: GUI of the Game
 
 
+
 ## Explanation of the Problem
 The objective is to develop an interactive MATLAB-based game, user-friendly Asteroid Strike Game, where the player control a defense spaceship to intercept and destroy incoming asteroids using bullets. Inspired by the popular space invaders game, it incorporates varying difficulty levels, real-time GUI interactions, and tracks player performance across the levels.
 
 
+
 ## Definitions of the Variables Used in the Problem
+
 
 ### GSTATE Structure Variables
 •  GSTATE: a global structure encapsulating the game's current state, including score, lives, level, asteroids, bullets, and GUI components.
@@ -35,6 +38,7 @@ The objective is to develop an interactive MATLAB-based game, user-friendly Aste
 	height: the height of the SpaceShip 
 
 
+
 ### Other Variables/Parameters
 •  best: a variable that holds the highest score which is saved to or loaded from info.mat.
 •  SapceShip.Alpha, asteroids.Alpha, bullets.Alpha, background.Alpha:  Alpha (transparency) values for graphical elements, that is set to 1 (which means fully opaque) in the initialization part.
@@ -45,11 +49,13 @@ The objective is to develop an interactive MATLAB-based game, user-friendly Aste
 •  progress: a matrix to track the player’s progress with each row containing [level, score] for each update of the game.
 
 
+
 ### GUI and Display Variables
 •  GSTATE.fig: a handle to the main game window (figure).
 •  GSTATE.ax: a handle to the axes used for drawing game elements.
 •  GSTATE.score_text, GSTATE.best_text, GSTATE.lives_text: handles to text labels displaying score, best score and lives in the GUI. 
 •  GSTATE.difficulty_menu: a handle to the dropdown menu for difficulty selection (Easy, Medium, Hard).
+
 
 
 ## Descriptions of the Tasks that Need to be Performed to Solve the Problem
@@ -63,6 +69,7 @@ The objective is to develop an interactive MATLAB-based game, user-friendly Aste
 •  Handling Game Over: showing a message box with the final score – saving the score if it is new high one – cleaning up and closing the game window.
 
 
+
 ## The Calculations Required to Solve Each Task of the Problem
 •  Asteroid Generation: each asteroid’s initial position (x,y) is randomly generated within specified ranges – each asteroid is assigned vertical (vy) and horizontal (vx) velocities based on the difficulty selection – the future position of each asteroid is determined using linear motion equations.
 •  Asteroid Movement: updating the position of each asteroid, at each time step, using its velocity. If an asteroid reaches the screen edge, its horizontal velocity is reversed (bouncing).
@@ -72,6 +79,7 @@ The objective is to develop an interactive MATLAB-based game, user-friendly Aste
 • Level Advancement: increasing the level when all asteroids are destroyed, then new asteroids are generated.
 •  Lives Management: Decreasing lives if an asteroid reaches the bottom of the screen.
 •  End Game : the game ends when the player’s lives reach 0.
+
 
 
 ## Some of the Equations Used to Solve the Problem
@@ -89,26 +97,35 @@ The objective is to develop an interactive MATLAB-based game, user-friendly Aste
 •	Linear: x(t) = x0 + vx * t ; y(t) = y0 + vy * t
 
 
+
 ## Structure Chart of the Program
 ![image](https://github.com/user-attachments/assets/df15205c-2d58-4be6-aade-6b61b36412e7)
+
+
 
 
 ## Flow Chart of the Program
 ![image](https://github.com/user-attachments/assets/a1083bd2-fb0c-4899-9b20-bceb99727551)
 
 
+
+
 ## How the GUI and the Related Matlab Codes Work
 The GUI was developed in Matlab to visually control and interact with the game using buttons and keyboard inputs. It includes Start, Fire, and Quit buttons, as well as dropdowns and display labels for score, lives, and difficulty. When the Start button is clicked, the game initializes and asteroids begin to fall. Players can fire bullets using the Fire button or Spacebar and move the spaceship left or right with the arrow keys. Each component of the GUI is linked to a separate .m function that manages its behavior. The GUI updates in real time using draw_state.m, and all elements are kept interactive and responsive using callbacks.
+
 
 
 ## Figures Produced when Running the Matlab Files (Example Demonstration)
 ![image](https://github.com/user-attachments/assets/28922b88-5078-4367-af96-54046b6b2b7e)
 
 
+
 ![image](https://github.com/user-attachments/assets/3a64a0b4-370e-4f77-afc9-ce0f4ad5e088)
 
 
+
 ![image](https://github.com/user-attachments/assets/4febb8aa-6331-417d-8ef2-c83c146b0717)
+
 
 
 ![image](https://github.com/user-attachments/assets/4dfa7ddb-43d6-4e6c-a1ae-92e7c44b6fa9)
